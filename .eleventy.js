@@ -12,6 +12,10 @@ module.exports = (config) => {
     params.set("v", Math.floor(Date.now() / 1000));
     return `${urlPart}?${params}`;
   });
+  // Utility filter to debug JSON objects returned from fetch requests
+  config.addFilter("prettyJSON", (obj) => {
+    return JSON.stringify(obj, null, 2);
+  });
 
   return {
     markdownTemplateEngine: "njk",

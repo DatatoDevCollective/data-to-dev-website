@@ -1,0 +1,18 @@
+[
+  {
+    "name": "About Us",
+    "path": "/about"
+  },
+  {
+    "name": "Blog",
+    "path": "/blog"
+  },
+  {
+    "name": "Get Involved",
+    "path": "/get-involved"
+  },
+  {
+    "name": "Contact Us",
+    "path": "/contact"
+  }
+]

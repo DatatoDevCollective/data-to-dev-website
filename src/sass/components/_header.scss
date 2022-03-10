@@ -1,0 +1,128 @@
+.header {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  background-color: hsl(0 0% 90% / 0.7);
+  display: flex;
+  justify-content: left;
+  padding-block: 1rem;
+  .logo {
+    width: max(200px, 18vw);
+    margin-left: 2rem;
+  }
+}
+
+.main-nav {
+  position: absolute;
+  width: 100%;
+  background-color: hsl(0 0% 90% / 0.7);
+  top: 100%;
+  left: 0;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 250ms ease-in-out;
+
+  ul {
+    margin: 0;
+    text-align: right;
+    padding-right: 2rem;
+  }
+  li {
+    margin-block: 2rem;
+  }
+  a {
+    color: #666;
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+  }
+  a:hover {
+    color: #000;
+  }
+}
+
+.nav-toggle {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+  &:focus ~ &-label {
+    outline: 3px solid rgba(#222222, 0.7);
+  }
+
+  &:checked ~ .main-nav {
+    transform: scale(1, 1);
+  }
+  &:checked ~ .main-nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+  }
+  &-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 2rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    span,
+    span::before,
+    span::after {
+      display: block;
+      height: 2px;
+      width: 1.5rem;
+      border-radius: 2px;
+      background: #000;
+      position: relative;
+    }
+    span::before,
+    span::after {
+      content: "";
+      position: absolute;
+    }
+    span::before {
+      top: 7px;
+    }
+    span::after {
+      bottom: 7px;
+    }
+  }
+}
+
+@media screen and (min-width: 820px) {
+  .nav-toggle-label {
+    display: none;
+  }
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 4fr) 1fr;
+  }
+  .logo {
+    grid-column: 2 / 3;
+    align-self: center;
+  }
+  .main-nav {
+    /*Reset styles for desktop screens*/
+    position: relative;
+    text-align: left;
+    transition: none;
+    transform: scale(1, 1);
+    background: none;
+    top: initial;
+    left: initial;
+
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    a {
+      opacity: 1;
+    }
+    ul {
+      display: flex;
+    }
+    li {
+      margin-block: 0;
+      margin-left: 3rem;
+    }
+  }
+}

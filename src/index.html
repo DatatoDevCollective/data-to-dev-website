@@ -1,6 +1,10 @@
 ---
 layout: home.html
 ---
-<p>{{ blog.posts[1].title }}</p>
-<p>{{ blog.featured[0].featuredPost.title }}</p>
-<img src="{{ '/images/BigLogo.svg' | url | bust }}" alt="Data to Dev Collective Logo" />
+{% set featured = blog.featured[0].featuredPost %}
+<!--
+<div style="display:flex;flex-direction:row;font-size:14px;font-weight:bold;">
+  <pre style="width:600px;">{{ blog | inspectJSON }}</pre>
+  <pre style="width:600px;">{{ featured | inspectJSON }}</pre>
+</div>
+-->

@@ -1,0 +1,105 @@
+:root {
+  --color-primary: hsl(123, 39%, 47%);
+  --color-highlight: hsl(268 50% 67%);
+  --dark-900: hsl(0 0% 9%);
+  --dark-700: hsl(0 0% 25%);
+  --light-100: hsl(88 50% 96%);
+  --light-300: hsl(88 50% 85%);
+
+  --ff-body: "PT Serif", Times, serif;
+  --ff-headings: "PT Sans", Helvetica, sans-serif;
+  --ff-code: "Hasklig", Courier, monospace;
+
+  /* @link https://utopia.fyi/type/calculator?c=320,16,1.125,1260,18,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+  --fs-xs: clamp(0.63rem, calc(0.84rem + -0.27vw), 0.79rem);
+  --fs-sm: clamp(0.84rem, calc(0.9rem + -0.08vw), 0.89rem);
+  --fs-base: clamp(1rem, calc(0.96rem + 0.21vw), 1.13rem);
+  --fs-lg: clamp(1.13rem, calc(1rem + 0.64vw), 1.5rem);
+  --fs-xl: clamp(1.27rem, calc(1.02rem + 1.25vw), 2rem);
+  --fs-2xl: clamp(1.42rem, calc(1rem + 2.11vw), 2.66rem);
+  --fs-3xl: clamp(1.6rem, calc(0.94rem + 3.32vw), 3.55rem);
+  --fs-4xl: clamp(1.8rem, calc(0.8rem + 4.99vw), 4.74rem);
+}
+
+/* @link https://utopia.fyi/space/calculator?c=320,16,1.2,1260,18,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+:root {
+  --fluid-min-width: 320;
+  --fluid-max-width: 1260;
+
+  --fluid-screen: 100vw;
+  --fluid-bp: calc(
+    (var(--fluid-screen) - var(--fluid-min-width) / 16 * 1rem) /
+      (var(--fluid-max-width) - var(--fluid-min-width))
+  );
+
+  @media screen and (min-width: 1260px) {
+    --fluid-screen: calc(var(--fluid-max-width) * 1px);
+  }
+}
+
+:root {
+  --fc-3xs-min: (var(--fc-s-min) * 0.25);
+  --fc-3xs-max: (var(--fc-s-max) * 0.25);
+
+  --fc-2xs-min: (var(--fc-s-min) * 0.5);
+  --fc-2xs-max: (var(--fc-s-max) * 0.5);
+
+  --fc-xs-min: (var(--fc-s-min) * 0.75);
+  --fc-xs-max: (var(--fc-s-max) * 0.75);
+
+  --fc-s-min: (var(--f-0-min, 16));
+  --fc-s-max: (var(--f-0-max, 18));
+
+  --fc-m-min: (var(--fc-s-min) * 1.5);
+  --fc-m-max: (var(--fc-s-max) * 1.5);
+
+  --fc-l-min: (var(--fc-s-min) * 2);
+  --fc-l-max: (var(--fc-s-max) * 2);
+
+  --fc-xl-min: (var(--fc-s-min) * 3);
+  --fc-xl-max: (var(--fc-s-max) * 3);
+
+  --fc-2xl-min: (var(--fc-s-min) * 4);
+  --fc-2xl-max: (var(--fc-s-max) * 4);
+
+  --fc-3xl-min: (var(--fc-s-min) * 6);
+  --fc-3xl-max: (var(--fc-s-max) * 6);
+
+  /* T-shirt sizes */
+  --space-3xs: calc(
+    ((var(--fc-3xs-min) / 16) * 1rem) + (var(--fc-3xs-max) - var(--fc-3xs-min)) *
+      var(--fluid-bp)
+  );
+  --space-2xs: calc(
+    ((var(--fc-2xs-min) / 16) * 1rem) + (var(--fc-2xs-max) - var(--fc-2xs-min)) *
+      var(--fluid-bp)
+  );
+  --space-xs: calc(
+    ((var(--fc-xs-min) / 16) * 1rem) + (var(--fc-xs-max) - var(--fc-xs-min)) *
+      var(--fluid-bp)
+  );
+  --space-s: calc(
+    ((var(--fc-s-min) / 16) * 1rem) + (var(--fc-s-max) - var(--fc-s-min)) *
+      var(--fluid-bp)
+  );
+  --space-m: calc(
+    ((var(--fc-m-min) / 16) * 1rem) + (var(--fc-m-max) - var(--fc-m-min)) *
+      var(--fluid-bp)
+  );
+  --space-l: calc(
+    ((var(--fc-l-min) / 16) * 1rem) + (var(--fc-l-max) - var(--fc-l-min)) *
+      var(--fluid-bp)
+  );
+  --space-xl: calc(
+    ((var(--fc-xl-min) / 16) * 1rem) + (var(--fc-xl-max) - var(--fc-xl-min)) *
+      var(--fluid-bp)
+  );
+  --space-2xl: calc(
+    ((var(--fc-2xl-min) / 16) * 1rem) + (var(--fc-2xl-max) - var(--fc-2xl-min)) *
+      var(--fluid-bp)
+  );
+  --space-3xl: calc(
+    ((var(--fc-3xl-min) / 16) * 1rem) + (var(--fc-3xl-max) - var(--fc-3xl-min)) *
+      var(--fluid-bp)
+  );
+}

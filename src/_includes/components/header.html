@@ -1,0 +1,16 @@
+<header class="header">
+  <img
+    class="logo"
+    src="{{ 'assets/images/BigLogo.svg' | url | bust }}"
+    alt="Data to Dev Collective Logo"
+  />
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+  <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+  <nav class="main-nav">
+    <ul role="list">
+      {% for link in nav %}
+      <li><a href="{{ link.path | url }}">{{ link.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>
